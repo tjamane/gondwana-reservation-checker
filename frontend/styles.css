@@ -1,0 +1,120 @@
+/* ===== Reset & Base ===== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f9fafb;
+  color: #222;
+  margin: 0;
+  padding: 20px;
+}
+
+h1, h2 {
+  margin: 0 0 10px 0;
+}
+
+p {
+  margin: 0 0 20px 0;
+  color: #555;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  height: 42px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #199a8e;
+  box-shadow: 0 0 0 2px rgba(25,154,142,0.2);
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+.card {
+  background: rgb(244,244,244); /* updated */
+  color: inherit;               /* updated */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ===== Button ===== */
+button {
+  width: 100%;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #199a8e;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #157c71;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== Results ===== */
+.result {
+  display: none;
+}
+
+.result.visible {
+  display: block;
+}
+
+.result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.availability {
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.availability.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.availability.unavailable {
+  background: #fee2e2;
+  color: #b91c1c;
+}

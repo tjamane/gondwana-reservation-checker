@@ -1,0 +1,21 @@
+{
+    "Unit Name": "Ocean View Suite",
+    "Date Range": "26\/09\/2025 \u2192 27\/09\/2025",
+    "Rate": 65000,
+    "Error Message": "No Member code",
+    "Guests": [
+        {
+            "Age Group": "Adult",
+            "Age": 9,
+            "Error Message": "No Member code",
+            "Category": "STANDARD"
+        },
+        {
+            "Age Group": "Adult",
+            "Age": 9,
+            "Error Message": "No Member code",
+            "Category": "STANDARD"
+        }
+    ],
+    "Available": true
+}
