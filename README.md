@@ -34,9 +34,6 @@ cd gondwana-reservation-checker
 bash
 Copy code
 php -S 0.0.0.0:8000 router.php
-Frontend: http://localhost:8000/frontend/index.html
-
-Backend API: http://localhost:8000/backend/api/rates.php
 
 Tip: Keep the frontend/ and backend/ folders intact for routing to work.
 
