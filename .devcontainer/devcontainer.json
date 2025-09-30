@@ -1,0 +1,6 @@
+{
+  "name": "Gondwana Reservation Checker",
+  "image": "mcr.microsoft.com/vscode/devcontainers/php:8.2",
+  "forwardPorts": [8000],
+  "workspaceFolder": "/workspace"
+}
