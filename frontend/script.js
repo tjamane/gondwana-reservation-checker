@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
-    // Clear previous results
     document.getElementById("resUnit").textContent = "";
     document.getElementById("resRate").textContent = "";
     document.getElementById("resDates").textContent = "";
@@ -30,10 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const ages = agesInput
-      .split(",")
-      .map(a => parseInt(a.trim()))
-      .filter(a => !isNaN(a));
+    const ages = agesInput.split(",").map(a => parseInt(a.trim())).filter(a => !isNaN(a));
     const occupants = ages.length || 1;
 
     function formatDate(dateStr) {
@@ -50,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     try {
-      const res = await fetch("../backend/api/rates.php", {
+      const res = await fetch("/api/rates.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
@@ -62,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       }
 
-      const leg = data.Legs?.[0]; // first leg only
+      const leg = data.Legs?.[0];
       let rateValue = leg ? leg["Effective Average Daily Rate"] : 0;
       const rateText = `N$${rateValue}`;
       let available = leg && leg["Error Code"] === 0;
@@ -71,14 +67,9 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById("resUnit").textContent = unit;
       document.getElementById("resRate").textContent = rateText;
       document.getElementById("resDates").textContent = `${payload.Arrival} → ${payload.Departure}`;
-
       availabilityEl.textContent = available ? "Available" : "Not Available";
       availabilityEl.className = available ? "availability available" : "availability unavailable";
-
       resultCard.classList.add("visible");
-
-      console.log("Payload sent:", payload);
-      console.log("Response:", data);
 
     } catch (err) {
       console.error(err);
