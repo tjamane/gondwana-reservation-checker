@@ -36,7 +36,9 @@ cd gondwana-reservation-checker
 
 2. Start the PHP development server
 The project uses a router.php file to correctly route API requests:
-php -S 0.0.0.0:8000 router.php
+```bash
+php -S 0.0.0.0:8000 router.php  #the project would start running
+
 •	The frontend will be accessible at http://localhost:8000/frontend/index.html.
 •	The backend API will be accessible at http://localhost:8000/backend/api/rates.php.
 Keep the folder structure intact (frontend/ and backend/) for proper routing.
