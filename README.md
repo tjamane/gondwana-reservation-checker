@@ -1,3 +1,5 @@
+#Develop by (mika kristian shikongo)
+
 # Gondwana Reservation Checker
 
 A simple web tool to check reservation rates for Gondwana units.  
