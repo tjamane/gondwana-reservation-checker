@@ -4,17 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gondwana Reservation Portal</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="frontend/styles.css">
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <div class="text-center" style="text-align:center; margin-bottom: 20px;">
       <h1>Gondwana Reservation Portal</h1>
       <p>Find the best rates for your perfect stay</p>
     </div>
 
-    <!-- Booking Form -->
     <div class="card">
       <form id="bookingForm">
         <div>
@@ -50,14 +48,13 @@
       </form>
     </div>
 
-    <!-- Results -->
     <div class="card result" id="resultCard">
       <h2>Rate Results</h2>
       <div class="result-item">
         <span>Unit Name</span>
         <span id="resUnit"></span>
       </div>
-       <div class="result-item">
+      <div class="result-item">
         <span>Rate</span>
         <span id="resRate" style="font-weight:bold; color:#199a8e;"></span>
       </div>
@@ -72,6 +69,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="frontend/script.js" defer></script>
 </body>
 </html>
