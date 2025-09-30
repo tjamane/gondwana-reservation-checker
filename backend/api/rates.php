@@ -29,8 +29,16 @@ if (!$unitName || !$arrivalDate || !$departureDate) {
     exit;
 }
 
-// Map Unit Name to Unit Type ID from constants
-$unitTypeId = UNIT_TYPE_IDS[$unitName] ?? null;
+// Case-insensitive Unit Name lookup
+$unitTypeId = null;
+foreach (UNIT_TYPE_IDS as $name => $id) {
+    if (strcasecmp($unitName, $name) === 0) { // Compare ignoring case
+        $unitTypeId = $id;
+        $unitName   = $name; // Normalize name casing
+        break;
+    }
+}
+
 if (!$unitTypeId) {
     http_response_code(400);
     echo json_encode(["error" => "Unknown Unit Name"]);
