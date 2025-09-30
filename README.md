@@ -30,8 +30,10 @@ A simple web-based tool to check reservation rates for Gondwana units. This proj
 ### 1. Clone the repository
 
 ```bash
+clone the repository in codespaces or vscode
 gh repo clone tjamane/gondwana-reservation-checker
 cd gondwana-reservation-checker
+
 2. Start the PHP development server
 The project uses a router.php file to correctly route API requests:
 php -S 0.0.0.0:8000 router.php
@@ -42,7 +44,7 @@ ________________________________________
 Using the Project
 1.	Open frontend/index.html in a browser.
 2.	Fill in the form:
-o	Ocean View Suite => -2147483637 or Mountain Cabin => -,-2147483456
+o	Ocean View Suite => -2147483637 or Mountain Cabin => -2147483456,
 o	Arrival and Departure dates.
 o	Occupants and Ages (comma-separated).
 3.	Click Check Rates.
