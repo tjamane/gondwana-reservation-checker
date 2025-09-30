@@ -1,9 +1,7 @@
-# gondwana-reservation-checker
-
-Absolutely! Here’s the full README content ready to copy and paste as README.md:
 # Gondwana Reservation Checker
 
-A simple web-based tool to check reservation rates for Gondwana units. This project includes a frontend (HTML, CSS, JS) and a backend (PHP API) for fetching rates. It is designed to run in **GitHub Codespaces**, local IDEs, or any environment with PHP installed.
+A simple web tool to check reservation rates for Gondwana units.  
+Includes a **frontend** (HTML, CSS, JS) and a **backend** (PHP API). Works in **GitHub Codespaces**, local IDEs, or any PHP-enabled environment.
 
 ---
 
@@ -11,17 +9,17 @@ A simple web-based tool to check reservation rates for Gondwana units. This proj
 
 - Check availability and rates for Gondwana units.
 - Input unit name, arrival/departure dates, occupants, and ages.
-- Display results dynamically with availability and rate.
+- Display results dynamically with availability and rates.
 - Responsive and easy-to-use interface.
-- Fully compatible with Codespaces or any PHP-enabled IDE.
+- Works in Codespaces or any PHP-enabled environment.
 
 ---
 
 ## Prerequisites
 
-- PHP 8.x installed locally or available in your Codespace.
-- Modern web browser (Chrome, Firefox, Edge, Safari).
-- Git installed to clone the repository.
+- PHP 8.x
+- Modern web browser (Chrome, Firefox, Edge, Safari)
+- Git (to clone the repository)
 
 ---
 
@@ -30,36 +28,50 @@ A simple web-based tool to check reservation rates for Gondwana units. This proj
 ### 1. Clone the repository
 
 ```bash
-clone the repository in codespaces or vscode
 gh repo clone tjamane/gondwana-reservation-checker
 cd gondwana-reservation-checker
-
 2. Start the PHP development server
-The project uses a router.php file to correctly route API requests:
-```bash
-php -S 0.0.0.0:8000 router.php  #the project would start running
+bash
+Copy code
+php -S 0.0.0.0:8000 router.php
+Frontend: http://localhost:8000/frontend/index.html
 
-•	The frontend will be accessible at http://localhost:8000/frontend/index.html.
-•	The backend API will be accessible at http://localhost:8000/backend/api/rates.php.
-Keep the folder structure intact (frontend/ and backend/) for proper routing.
-________________________________________
+Backend API: http://localhost:8000/backend/api/rates.php
+
+Tip: Keep the frontend/ and backend/ folders intact for routing to work.
+
 Using the Project
-1.	Open frontend/index.html in a browser.
-2.	Fill in the form:
-o	Ocean View Suite => -2147483637 or Mountain Cabin => -2147483456,
-o	Arrival and Departure dates.
-o	Occupants and Ages (comma-separated).
-3.	Click Check Rates.
-4.	Results will display dynamically:
-o	Unit Name
-o	Rate
-o	Date Range
-o	Availability status
-________________________________________
+Open frontend/index.html in a browser.
+
+Fill in the form:
+
+Unit: Ocean View Suite => -2147483637, Mountain Cabin => -2147483456
+
+Arrival and Departure dates
+
+Occupants and Ages (comma-separated)
+
+Click Check Rates.
+
+Results display dynamically:
+
+Unit Name
+
+Rate
+
+Date Range
+
+Availability status
+
 Backend API
-•	Endpoint: /backend/api/rates.php
-•	Method: POST
-•	Payload example:
+Endpoint: /backend/api/rates.php
+
+Method: POST
+
+Payload Example:
+
+json
+Copy code
 {
   "Unit Name": "Ocean View Suite",
   "Arrival": "10/10/2025",
@@ -67,7 +79,10 @@ Backend API
   "Occupants": 2,
   "Ages": [25, 30]
 }
-•	Response example:
+Response Example:
+
+json
+Copy code
 {
   "Legs": [
     {
@@ -76,18 +91,4 @@ Backend API
     }
   ]
 }
- Ensure the Unit Name corresponds to the correct unique ID from the API.
-________________________________________
-Notes for Collaborators
-•	Always keep the frontend and backend folders in their original locations.
-•	Use Codespaces or a local PHP server with router.php for proper routing.
-•	Check browser console for API requests and responses for debugging.
-•	Commit changes before pushing or creating pull requests.
-________________________________________
-Contributing
-1.	Fork the repository.
-2.	Create a branch: git checkout -b feature/your-feature.
-3.	Make changes and commit: git commit -m "Add new feature".
-4.	Push to your branch: git push origin feature/your-feature.
-5.	Open a pull request for review.
-
+Make sure the Unit Name matches the correct unique ID from the API.
