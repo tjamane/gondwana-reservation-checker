@@ -3,9 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const resultCard = document.getElementById("resultCard");
   const submitBtn = document.getElementById("submitBtn");
 
+  // List of allowed unit names from backend (can expand if more units are added)
+  const UNIT_NAMES = ["Ocean View Suite", "Mountain Cabin"];
+
   form.addEventListener("submit", async function(e) {
     e.preventDefault();
 
+    // Clear previous results
     document.getElementById("resUnit").textContent = "";
     document.getElementById("resRate").textContent = "";
     document.getElementById("resDates").textContent = "";
@@ -17,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     submitBtn.disabled = true;
     submitBtn.textContent = "Checking...";
 
-    const unit = document.getElementById("unitName").value.trim();
+    let unit = document.getElementById("unitName").value.trim();
     const arrivalInput = document.getElementById("arrivalDate").value;
     const departureInput = document.getElementById("departureDate").value;
     const agesInput = document.getElementById("ages").value;
@@ -29,7 +33,20 @@ document.addEventListener("DOMContentLoaded", function() {
       return;
     }
 
-    const ages = agesInput.split(",").map(a => parseInt(a.trim())).filter(a => !isNaN(a));
+    // Match unit name in a case-insensitive way
+    const matchedUnit = UNIT_NAMES.find(u => u.toLowerCase() === unit.toLowerCase());
+    if (!matchedUnit) {
+      alert("Unknown Unit Name. Please use one of: " + UNIT_NAMES.join(", "));
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Check Rates";
+      return;
+    }
+    unit = matchedUnit; // normalize to proper case
+
+    const ages = agesInput
+      .split(",")
+      .map(a => parseInt(a.trim()))
+      .filter(a => !isNaN(a));
     const occupants = ages.length || 1;
 
     function formatDate(dateStr) {
